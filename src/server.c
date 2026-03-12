@@ -3375,6 +3375,12 @@ void populateCommandTable(void) {
     int j;
     struct redisCommand *c;
 
+
+    /*static struct redisCommand d = {"PASTEN", "", "", "", CMD_DOC_NONE, NULL, NULL, "generic",COMMAND_GROUP_GENERIC
+                                    , EXISTS_History, 1, NULL, 0, pastenCommand, 1, CMD_READONLY, ACL_CATEGORY_KEYSPACE
+                                    , }
+*/
+
     for (j = 0;; j++) {
         c = redisCommandTable + j;
         if (c->declared_name == NULL)
@@ -3391,6 +3397,7 @@ void populateCommandTable(void) {
          * by rename-command statements in redis.conf. */
         retval2 = dictAdd(server.orig_commands, sdsdup(c->fullname), c);
         serverAssert(retval1 == DICT_OK && retval2 == DICT_OK);
+        printf("Command '%s' loaded\n", c->fullname);
     }
 }
 
