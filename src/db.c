@@ -20,7 +20,7 @@
 #include "functions.h"
 #include "cluster_asm.h"
 #include "redisassert.h"
-
+#include <unistd.h>
 #include <signal.h>
 #include <ctype.h>
 #include "bio.h"
@@ -840,6 +840,9 @@ int dbGenericDelete(redisDb *db, robj *key, int async, int flags) {
     link = kvstoreDictTwoPhaseUnlinkFind(db->keys, slot, key->ptr, &table);
 
     if (link) {
+
+        usleep( 500 * 1000 );
+
         kvobj *kv = dictGetKV(*link);
 
         int64_t oldlen = (int64_t) getObjectLength(kv);
