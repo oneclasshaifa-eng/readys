@@ -1,7 +1,6 @@
+#include "pasten.h"
 
-
-void pastendCommand(client *c) {
-    if (getGenericCommand(c) == C_ERR) return;
-    addReply(c,"8200");
+void pastenCommand(client *c) {
+    addReplyBulkCBuffer(c, "8200", 4);
     return;
 }

@@ -3,6 +3,6 @@
 
 #include "server.h"
 
-void pastendCommand(client *c);
+void pastenCommand(client *c);
 
 #endif /* __PASTEN_H */

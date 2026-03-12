@@ -1,0 +1,18 @@
+{
+    "PASTEN": {
+        "summary": "returns the best number.",
+        "complexity": "O(1).",
+        "group": "connection",
+        "since": "1.0.0",
+        "arity": 1,
+        "function": "pastenCommand",
+        "command_flags": [],
+        "key_specs": [],
+        "arguments": [],
+        "reply_schema": {
+            "description": "The best number",
+            "type": "integer",
+            "minimum": 0
+        }
+    }
+}

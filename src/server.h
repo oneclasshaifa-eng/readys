@@ -4143,6 +4143,7 @@ size_t hotkeysGetMemoryUsage(hotkeyStats *hotkeys);
 /* Commands prototypes */
 void authCommand(client *c);
 void pingCommand(client *c);
+void pastenCommand(client *c);
 void echoCommand(client *c);
 void commandCommand(client *c);
 void commandCountCommand(client *c);
